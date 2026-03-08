@@ -226,6 +226,7 @@ export default function App() {
       return;
     }
 
+    const city = selectedCity;
     const controller = new AbortController();
 
     async function loadForecast() {
@@ -233,7 +234,7 @@ export default function App() {
         setForecastLoading(true);
         setForecastError(null);
         const response = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${selectedCity.latitude}&longitude=${selectedCity.longitude}&timezone=${encodeURIComponent(selectedCity.timezone)}&forecast_days=7&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max`,
+          `https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&timezone=${encodeURIComponent(city.timezone)}&forecast_days=7&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max`,
           { signal: controller.signal }
         );
 
