@@ -37,4 +37,4 @@ Nightshift build 023: TripDeck travel planner with geocoding, weather forecast, 
 
 - The Vite base path is configured for GitHub Pages at `/nightshift-023-tripdeck/`.
 - Forecast and autocomplete requests execute in the browser at runtime; the build does not require API keys.
-- Live deployment verification was not possible inside this sandbox because outbound network access to GitHub and npm is blocked.
+- Deployment is handled by `.github/workflows/deploy.yml` on pushes to `main`.
